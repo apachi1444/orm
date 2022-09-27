@@ -1,0 +1,14 @@
+JPA interface ( API ) créée par Sun to standarize ORM
+
+contient des interfaces , abstarct classes 
+
+premiere implémentation de cette interface ( EclipseLink )
+(called de réference )
+
+
+
+
+// des implémentation de JPA
+JPA -> Hibernate ( serveur application : JBOSS )
+    -> TopLink
+    -> EclipseLink	( serveur application : GlassFish )
