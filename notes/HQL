@@ -1,0 +1,14 @@
+Query query = entityManager.createQuery("select p from Produit p")
+// HQL ( hibernate query language )
+
+
+Query query = entityManager.createQuery("select p from Produit p where p.designation like :x");
+query.setParameter("x" , "stringToBeReplaced");
+return query.getResultList();
+
+method find()
+
+Produit p = entityManager.find(Produit.class , idProduit);
+
+entityManager.merge(p) to update
+entityManager.remove(p) to update

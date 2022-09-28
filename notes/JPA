@@ -5,6 +5,37 @@ contient des interfaces , abstarct classes
 premiere implémentation de cette interface ( EclipseLink )
 (called de réference )
 
+les beans objects are objects that traverse all the layers 
+and should be serializble
+cuz between each move between layers we have to serialize and deserialize them
+
+object persistant est un objet dont il est conservé dans une unité de persistance
+(ficher , bd , disk .. )
+
+persistance.xml
+< persistance-unit name="UP_">
+
+<provider > Hibernate Provider 
+<properties>
+	properties of the db that we want to stock in the objects
+	hibernate.dialect MYSQLDialect
+	hibernate hbm2ddl.auto value ="update"
+	// create tables if they don't exist
+				value ="create"
+	// in every start of the application we change our db
+
+!!! in every environment ( dev , test , prod)  we should use a persistance.xml
+
+
+in daoImplementation : entityManagerFactory stocks all the data of the persistance unit !
+( singleton )
+
+EntityManager allow us to persist the data using the update , delete and insert 
+entityManager.persist(p); !!!!
+	
+
+
+EntityTransaction  = entityManager.getTransaction();
 
 
 

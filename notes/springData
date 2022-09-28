@@ -1,0 +1,30 @@
+layer above the JPA to simpify the code
+to avoid using the interfaces in the jpa 
+( entity manager , entity manager factory , transaction ) ... 
+
+takes care of the configuration of JPA et transactions management
+
+in the spring boot we should configure the application.properties
+
+create generic interfaces and generic implementations for JPA entities
+
+no need to call entityManager	
+
+we should create an interface that inherites from the JPARepository
+( public interface ProduitRepository extend JpaRepository<Produit , Long>{
+	// add new methods for our purposes
+	public List<Produit> findByDesignation(String des);
+
+	// or 
+	@Query("select p from Produit p where p.designation like :x and p.prix > :y")
+	public List<Produit> cherecher(
+	@Param("x")String mc,
+	@Param("y") double prixMin
+	);
+
+
+}
+
+
+// dev tools interface web pour voir la bd h2
+h2 is a db which is stored in the memory
