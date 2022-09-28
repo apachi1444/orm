@@ -2,6 +2,17 @@ JPA interface ( API ) créée par Sun to standarize ORM
 
 contient des interfaces , abstarct classes 
 
+SUN creates JPA 
+then SUN is selled to ORACLE
+
+!!!!!!!!!!!!
+
+Hibernate was created before JPA so we call JPQL like HQL ::::
+
+example of web applications ( JBOSS  uses hibernate , GLASSFISH , websphere )
+
+!!!!!!!!!!!!!
+
 premiere implémentation de cette interface ( EclipseLink )
 (called de réference )
 

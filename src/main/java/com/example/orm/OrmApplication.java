@@ -12,20 +12,19 @@ import java.util.Date;
 @SpringBootApplication
 public class OrmApplication implements CommandLineRunner {
 
-    @Autowired
-    StudentRepository studentRepository;
+
     public static void main(String[] args) {
         SpringApplication.run(OrmApplication.class, args);
     }
 
     @Override
     public void run(String... args) throws Exception {
-        studentRepository.save(new Student(null , "Med" , "ahah@gmail.com" , new Date() , 45));
-        studentRepository.save(new Student(null , "Med" , "ahahsdf@gmail.com" , new Date() , 455));
-
-        studentRepository.findAll().forEach(et -> {
-            System.out.println(et.toString());
-        });
+//        studentRepository.save(new Student(null , "Med" , "ahah@gmail.com" , new Date() , 45));
+//        studentRepository.save(new Student(null , "Med" , "ahahsdf@gmail.com" , new Date() , 455));
+//
+//        studentRepository.findAll().forEach(et -> {
+//            System.out.println(et.toString());
+//        });
 
 
     }

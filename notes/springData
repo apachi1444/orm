@@ -8,6 +8,8 @@ in the spring boot we should configure the application.properties
 
 create generic interfaces and generic implementations for JPA entities
 
+in the application context , spring will use the generic implementation to implement the generic interfaces
+
 no need to call entityManager	
 
 we should create an interface that inherites from the JPARepository
@@ -28,3 +30,5 @@ we should create an interface that inherites from the JPARepository
 
 // dev tools interface web pour voir la bd h2
 h2 is a db which is stored in the memory
+
+SNAPSHOT Means that the application is still in progress
