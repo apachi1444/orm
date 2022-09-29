@@ -21,7 +21,7 @@ public class Lesson {
 
     private int hours;
 
-    @OneToMany(mappedBy = "lesson")
+    @OneToMany(mappedBy = "lesson" , fetch = FetchType.EAGER)
     private Collection<Inscription> inscriptions;
 
 }

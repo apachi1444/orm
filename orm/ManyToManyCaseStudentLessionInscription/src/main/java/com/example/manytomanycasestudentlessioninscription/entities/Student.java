@@ -20,7 +20,7 @@ public class Student {
     private String name;
     private String lastName;
 
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "student" , fetch = FetchType.EAGER)
     private Collection<Inscription> inscriptions;
 
 }
