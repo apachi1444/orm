@@ -6,6 +6,7 @@ import com.example.manytomanycasestudentlessioninscription.dao.StudentRepo;
 import com.example.manytomanycasestudentlessioninscription.entities.Inscription;
 import com.example.manytomanycasestudentlessioninscription.entities.Lesson;
 import com.example.manytomanycasestudentlessioninscription.entities.Student;
+import org.apache.juli.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
