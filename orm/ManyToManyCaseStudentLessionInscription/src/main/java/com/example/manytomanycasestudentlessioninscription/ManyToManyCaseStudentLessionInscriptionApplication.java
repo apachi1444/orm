@@ -11,12 +11,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 import javax.xml.crypto.Data;
+import java.util.ArrayList;
 import java.util.Date;
 
 @SpringBootApplication
-public class ManyToManyCaseStudentLessionInscriptionApplication implements CommandLineRunner {
+public class ManyToManyCaseStudentLessionInscriptionApplication {
 
     @Autowired
     StudentRepo studentRepo;
@@ -24,32 +26,51 @@ public class ManyToManyCaseStudentLessionInscriptionApplication implements Comma
     @Autowired
     LessonRepo lessonRepo;
 
-    @Autowired
-    InscriptionRepo inscriptionRepo;
 
     public static void main(String[] args) {
         SpringApplication.run(ManyToManyCaseStudentLessionInscriptionApplication.class, args);
     }
 
-    @Override
-    public void run(String... args) throws Exception {
-        studentRepo.save(new Student(null, "Jaoua", "Yessine", null));
-        studentRepo.save(new Student(null, "Jaoua", "Ahmed", null));
+    @Bean
+    CommandLineRunner Start(StudentRepo studentRepo, LessonRepo lessonRepo) {
+        return args -> {
+            Student student = studentRepo.save(new Student(null, "Jaoua", "Yessine", new ArrayList<Lesson>()));
+            Student student2 = studentRepo.save(new Student(null, "Jaoua", "Ahmed", new ArrayList<Lesson>()));
 
-        lessonRepo.save(new Lesson(null, "Math", 40, null));
-        lessonRepo.save(new Lesson(null, "Phy", 80, null));
+            Lesson lesson = lessonRepo.save(new Lesson(null, "Math", 400, new ArrayList<Student>()));
+            Lesson lesson2 = lessonRepo.save(new Lesson(null, "Phy", 80, new ArrayList<Student>()));
 
-        Lesson lesson = lessonRepo.findById(1L).get();
-        Student student = studentRepo.findById(1l).get();
-        Lesson lesson2 = lessonRepo.findById(2L).get();
-        Student student2 = studentRepo.findById(2l).get();
+            student.getLessons().add(lesson);
+            student.getLessons().add(lesson2);
+            lesson.getStudentList().add(student);
+            lesson2.getStudentList().add(student);
 
-        inscriptionRepo.save(new Inscription(null, new Date(), 14, student, lesson));
-        System.out.println(lesson);
+            studentRepo.save(student);
 
-        inscriptionRepo.findByLesson(lesson).forEach(et -> System.out.println(et));
+            class Parent {
+                void display() {
+                    System.out.println("parent");
+                }
+            }
 
+            class Child extends Parent {
+                @Override
+                void display() {
+                    System.out.println("child");
+                }
+                
+            }
 
+            Parent p;
+            Child c = new Child();
+
+            // assign sub class to parent class
+            p = c;
+            p.display();
+            c.display();
+
+        };
     }
+
 
 }

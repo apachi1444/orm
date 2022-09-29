@@ -27,10 +27,8 @@ public class Lesson {
 //    @OneToMany(mappedBy = "lesson" , fetch = FetchType.EAGER)
 //    private Collection<Inscription> inscriptions;
 
-    @ManyToMany
-    @JoinTable(name = "inscription",
-            joinColumns = @JoinColumn(name = "student_id"),
-            inverseJoinColumns = @JoinColumn(name = "lesson_id"))
+    @ManyToMany(fetch = FetchType.LAZY)
+
     List<Student> studentList;
 
 }

@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class Student {
 //    @OneToMany(mappedBy = "student" , fetch = FetchType.EAGER)
 //    private Collection<Inscription> inscriptions;
 
-    @ManyToMany
+    @ManyToMany(cascade={CascadeType.ALL}, fetch = FetchType.LAZY,mappedBy = "studentList")
     List<Lesson> lessons;
 
 }
