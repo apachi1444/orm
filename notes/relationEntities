@@ -30,3 +30,5 @@ when we do the mapped by to told spring that these two attributes have the same 
 dans la relation @ManyToMany creation d'un nouveau table
 @JoinedTable(name=...)
 
+
+in the ManyToMany we don't an ownder side in the db

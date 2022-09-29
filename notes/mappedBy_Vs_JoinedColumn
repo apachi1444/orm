@@ -1,0 +1,9 @@
+joinCOlumn specify the column we'll use for joining an entity or a collection
+
+mapped by defening the reference side ( non owning side ) of the relationship	
+
+
+the owninig side in ManyToOne / OneToMany is usually defined on the main side of the relationship
+
+
+to make the relation bidirectional we have to define the reference side ( mapped by )
