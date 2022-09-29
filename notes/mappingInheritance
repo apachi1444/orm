@@ -1,0 +1,18 @@
+3 types for doing the inheritance 
+
+Person -> Student
+    	-> Professor	
+
+1/ single table , 
+
+we will create a column for person ( col for student and professor )
+some values will be null in the same table
+
+INCONV : we will allocate for memory for nothing 
+
+2 / TABLE_PER_CLASS
+	each child has its own table
+
+3 / JOINED TABLE
+ the person table will contain the foreign key of the child table 	
+
