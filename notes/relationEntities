@@ -1,0 +1,32 @@
+2 types of associations : oneToMAny , oneToOne
+
+bidirectional relation : 
+			
+			// ** * Dans la classe Patient 
+			 @OneToMany(mappedBy="patient")
+			 private Collection<RendezVous> rendezVous;
+
+				
+			// Dans la classe Rendez vous
+			@ManyToOne
+			private Patient patient;
+
+unidirectional relation : only one element contains the other
+			   arrow from rendez vous to patient
+			donc dans la classe rendez vous we need to declare a patient
+			and dans la classe patient c est pas la peine
+			
+
+rq : la classe qui contient foreing keys will not contain the mapped by attribute
+@JoinedColumn ( name= "columnForeignKey" )( création de la foreing key )
+
+when we do the mapped by to told spring that these two attributes have the same relation
+
+@OneToMany(mappedBy="" , fetch=FetchType.EAGER / LAZY)
+
+// la classe qui a cette annotation ne contient pas le foreing key
+@OneToOne(mappedBy="")
+
+dans la relation @ManyToMany creation d'un nouveau table
+@JoinedTable(name=...)
+
