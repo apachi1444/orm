@@ -83,3 +83,11 @@ he should send the refresh to make the server able to resend him a new access to
 
 authorization : is all about what you are allowed to do in the context of the application
 authentication : is about who you are in the context of an application
+
+granted authorities are expressed using plain names
+( READ_PROFILE , EDIT_PROFILE )
+
+roles also
+(ROLE_ADMIN , ROLE_USER)
+
+roles are much bigger than the granted authorities

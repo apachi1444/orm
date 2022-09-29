@@ -58,7 +58,7 @@ public class ManyToManyCaseStudentLessionInscriptionApplication {
                 void display() {
                     System.out.println("child");
                 }
-                
+
             }
 
             Parent p;
